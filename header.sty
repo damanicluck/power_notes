@@ -1,0 +1,66 @@
+%===============================================================
+% _._     _,-'""`-._
+% (,-.`._,'(       |\`-/|
+%     `-.-' \ )-`( , o o)
+%           `-    \`_`"'-
+
+% __..--''``---....___   _..._    __
+% /// //_.-'    .-/";  `        ``<._  ``.''_ `. / // /
+% ///_.-' _..--.'_    \                    `( ) ) // //
+% / (_..-' // (< _     ;_..__               ; `' / ///
+% / // // //  `-._,_)' // / ``--...____..-' /// / //
+% Header and Style File by Damanic
+% Will contain comments since this is a learning process for me
+%===============================================================
+
+% 1. 
+\ProvidesPackage{header}
+%===============================================================
+% Packages Used
+%===============================================================
+\usepackage{amsmath}
+\usepackage{circuitikz}
+\usepackage{enumitem}
+\usepackage{lipsum}
+\usepackage{geometry}
+\usepackage{pgfplots}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{tocbasic}
+\usepackage{tocloft}
+\usepackage{upgreek}
+\usepackage[utf8]{inputenc}
+
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+%===============================================================
+% Data
+%===============================================================
+\def\course{EECS 16B}
+\def\courseName{Designing Information Devices and Systems II}
+\def\author{Damanic Luck}
+
+%2. 
+\newcommand{\semester}[1]{\newcommand{\sem}{#1}}
+\def\semester{Fall 2023}
+
+%===============================================================
+% Additional Notes, Applications, Main Walkthrough styling
+%===============================================================
+
+%===============================================================
+% Notes with the appropriate numbering, like footnotes
+% 1. \usepackage can only be used in the document preamble while here I'm making my own package for my own use essentially?
+% 2. Follows the following structure of \newcommand{cmd}[args]{def} or \renewcommand{cmd}[args]{def}
+    % cmd 
+    %     A command name beginning with a \. For \newcommand it must not be already     defined and must not begin with \end; for \renewcommand it must already be defined.
+    % args
+    %     An integer from 1 to 9 denoting the number of arguments of the command being defined. The default is for the command to have no arguments.
+    % def 
+    %     The text to be substituted for every occurrence of cmd; a parameter of the form #n in cmd is replaced by the text of the nth argument when this substitution takes place.
+%===============================================================
