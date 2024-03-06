@@ -23,13 +23,18 @@
 \usepackage{enumitem}
 \usepackage{lipsum}
 \usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[parfill]{parskip}
 \usepackage{pgfplots}
 \usepackage{setspace}
 \usepackage{tikz}
 \usepackage{tocbasic}
 \usepackage{tocloft}
+\usepackage{tcolorbox}
 \usepackage{upgreek}
 \usepackage[utf8]{inputenc}
+\usepackage{xcolor}
 
 \geometry{
     a4paper,
@@ -37,7 +42,6 @@
     left=20mm,
     top=20mm,
 }
-
 %===============================================================
 % Data
 %===============================================================
@@ -48,7 +52,29 @@
 %2. 
 \newcommand{\semester}[1]{\newcommand{\sem}{#1}}
 \def\semester{Fall 2023}
+\newenvironment{define}
+    {\begin{tcolorbox}[
+        title=Definition,
+        colback=pink!5!white,
+        colframe=pink!100!black
+        ]}
+    {\end{tcolorbox}}
 
+\newenvironment{concept}
+    {\begin{tcolorbox}[
+        title=Concept,
+        colback=blue!5!white,
+        colframe=blue!50!white
+        ]}
+    {\end{tcolorbox}}
+
+\newenvironment{sanity}
+    {\begin{tcolorbox}[
+        title=Sanity Check,
+        colback=red!5!white,
+        colframe=red!70!white
+        ]}
+    {\end{tcolorbox}}
 %===============================================================
 % Additional Notes, Applications, Main Walkthrough styling
 %===============================================================
