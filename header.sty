@@ -22,6 +22,7 @@
 \usepackage{circuitikz}
 \usepackage{enumitem}
 \usepackage{lipsum}
+\usepackage{float}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -35,7 +36,8 @@
 \usepackage{upgreek}
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
-
+%package used for delta wye 
+\usepackage{rotating,stackengine,scalerel}
 \geometry{
     a4paper,
     total={170mm,257mm},
@@ -52,6 +54,8 @@
 %2. 
 \newcommand{\semester}[1]{\newcommand{\sem}{#1}}
 \def\semester{Fall 2023}
+
+% Following environments are for emphasis within the document
 \newenvironment{define}
     {\begin{tcolorbox}[
         title=Definition,
@@ -75,6 +79,13 @@
         colframe=red!70!white
         ]}
     {\end{tcolorbox}}
+
+% copied from : https://tex.stackexchange.com/questions/481532star-wye-electrical-connection-math-symbol
+\newcommand\wye{\scalerel*{\stackengine{-1pt}{%
+  \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
+  \rotatebox[origin=c]{-30}{\rule{10pt}{1.3pt}}}{%
+  \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}}
+
 %===============================================================
 % Additional Notes, Applications, Main Walkthrough styling
 %===============================================================
