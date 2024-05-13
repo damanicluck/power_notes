@@ -94,11 +94,11 @@ Why is my function generator's output voltage wrong?
 \subsection{Real, Reactive and Apparent Power}
 There are three different types of AC power. $\phi$ here is the impedance phase angle between the voltage and the current.
 \begin{define}
-    \textbf{Apparent power:} product of the RMS current and RMS voltage and represented by S in units of W (watts)
+    \textbf{Apparent power:} product of the RMS current and RMS voltage and represented by S in units of VA
     \[S = V_{RMS} I_{RMS}\]
-    \textbf{Active/Real power:} power consumed or used within an AC circuit and represented by P. Is the real power in units of VA
-    \[P = V_{MAX} I_{MAX} \cos{\phi}\]
-    \textbf{Reactive power:} the power developed in the circuit and represented by Q in units of VAR
+    \textbf{Active/Real power:} power consumed or used within an AC circuit and represented by P. Is the real power in units of W (watts)
+    \[P = V_{RMS} I_{RMS} \cos{\phi}\]
+    \textbf{Reactive power:} the power developed in the circuit and represented by Q in units of VAR. Is the maximum value of the power component that "messes around", going back and forth
     \[Q = V_{RMS} I_{RMS} \sin{\phi}\]
 \end{define}
 

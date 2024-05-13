@@ -1,3 +1,27 @@
-\subsection{How to read AC \& DC Schematics}
+\subsection{How to read AC \& DC Schematics and Power System Relaying}
+\begin{concept}
+    At its core, schematics graphically arrange the components of a system to emphasize the functional arrangement as opposed to the physical arrangement. Emphasizing function facilitates an understanding of how the system is supposed to operate and makes functional testing of systems much easier because it highlights relationships between elements.
+\end{concept}
 
-Other names for AC schematics include, AC Elementary Diagrams or Three Line Diagrams
+Other names for AC schematics include, AC Elementary Diagrams or Three Line Diagrams. DC Schematics are referred to as elementary wiring diagrams. The DC schematics depict the DC system and shows the protection and control functions of the equipment in the substation. Sometimes the control functions are supplied by AC and are included in the elementary diagram. Standards in the AC and DC schematic can differ slightly from utility to utility. Both of these schematics will include the rating for circuit elements like resistors, transformers etc.
+
+Any depiction of reality by the single line diagram is on a large scale, it might show where major pieces of equipment are in relation to each other. On the other hand, though the AC and DC schematics still don’t show reality in every detail, they will contain information that will provide the link between the real depiction of the equipment seen in wiring diagrams and the almost purely functional depiction shown in the single line diagram.
+
+Another vital function of the AC schematic is to show how the AC current and voltage circuits can be isolated for testing. For example, microprocessor delays might contribute to how secondary input quantities are measured as well as the directional sensitivity of specific elements.
+
+\begin{concept}
+    \textbf{AC and DC schematics} allow users to quickly trace a signal through the circuit and understand the function without regard to the actual physical wiring locations. Detail will include specific terminal numbers of devices and test switches to which connections are made. 
+\end{concept}
+
+\subsubsection{Common Practices}
+\begin{enumerate}
+    \item If complexity of the system requires it, the devices controlling the equipment.
+    \item The DC circuit is usually shown with the positive bus closer to the top of the page and the negative bus closer to the bottom. The general layout of these drawings is that the DC source is usually shown at the left end of the drawing and the initiating contacts are shown above the operating elements. Control flow is generally shown so that the diagram is read from upper left to lower right.
+\end{enumerate}
+
+\subsubsection{DC Schematics and IEC 61850 Station Bus}
+DC schematics: relay systems almost universally use DC for the controls; control ladder diagram or sometimes these are also referred to as elementary wiring diagrams.
+
+IEC 61850 differs from other standards/protocols because it comprises several standards describing client/server and perr-to-peer communications, substation design and configuration, and testing. IEC 61850 provides a method for relay-to-relay interoperability between IEDs from different manufacturers. With the open architecture, it freely supports allocation of C37.2 device functions. The station bus described by IEC 61850 operates digitally over a secure Ethernet based network sending protecting relay messages called Generic Substation Events (GSE) or Generic Object Oriented Substation Events (GOOSE) between relays and other intelligent electronic devices (IEDs) on that network.
+
+Because of this feature, it eliminates most dedicated control wiring that would normally be wired from relay-to-relay (i.e. a trip output contact from one relay to the input coil of another relay). Due to this digital communication between relays, a typical DC schematic diagram alone is not an adequate method for describing the system.
