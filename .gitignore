@@ -6,3 +6,5 @@
 *.out
 *.synctex.gz
 *.toc
+test_file.tex
+test_file.pdf
