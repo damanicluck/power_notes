@@ -1,50 +1,70 @@
-%===============================================================
-% _._     _,-'""`-._
-% (,-.`._,'(       |\`-/|
-%     `-.-' \ )-`( , o o)
-%           `-    \`_`"'-
-
-% __..--''``---....___   _..._    __
-% /// //_.-'    .-/";  `        ``<._  ``.''_ `. / // /
-% ///_.-' _..--.'_    \                    `( ) ) // //
-% / (_..-' // (< _     ;_..__               ; `' / ///
-% / // // //  `-._,_)' // / ``--...____..-' /// / //
-% Header and Style File by Damanic
-% Will contain comments since this is a learning process for me
-%===============================================================
-
-% 1. 
-\ProvidesPackage{header}
-%===============================================================
-% Packages Used
-%===============================================================
+% \ProvidesPackage{header}
+% \usepackage{amsmath}
+% \usepackage{circuitikz}
+% \usepackage{enumitem}
+% \usepackage{lipsum}
+% \usepackage{float}
+% \usepackage{geometry}
+% \usepackage{graphicx}
+% \usepackage{hyperref}
+% \usepackage[parfill]{parskip}
+% \usepackage{pdfpages}
+% \usepackage{pgfplots}
+% \usepackage{setspace}
+% \usepackage{tikz}
+% \usepackage{tocbasic}
+% \usepackage{tocloft}
+% \usepackage{tcolorbox}
+% \usepackage{upgreek}
+% \usepackage[utf8]{inputenc}
+% \usepackage{xcolor}
+% %package used for delta wye 
+% \usepackage{rotating,stackengine,scalerel}
+% \geometry{
+%     a4paper,
+%     total={170mm,257mm},
+%     left=20mm,
+%     top=20mm,
+% }
 \usepackage{amsmath}
-\usepackage{circuitikz}
-\usepackage{enumitem}
-\usepackage{lipsum}
-\usepackage{float}
-\usepackage{geometry}
+\usepackage{textcomp}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{comment}
+\usepackage{latexsym}
+\usepackage{epsf}
+\usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage[parfill]{parskip}
-\usepackage{pdfpages}
-\usepackage{pgfplots}
-\usepackage{setspace}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc} % to get proper curly braces with \tt
+\usepackage{adjustbox}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsthm}
 \usepackage{tikz}
-\usepackage{tocbasic}
-\usepackage{tocloft}
-\usepackage{tcolorbox}
-\usepackage{upgreek}
-\usepackage[utf8]{inputenc}
-\usepackage{xcolor}
-%package used for delta wye 
-\usepackage{rotating,stackengine,scalerel}
-\geometry{
-    a4paper,
-    total={170mm,257mm},
-    left=20mm,
-    top=20mm,
-}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usetikzlibrary{calc}
+\usepackage{cancel}
+\usepackage{changepage}
+\usepackage[american,siunitx]{circuitikz}
+\usepackage{color,hyperref,listings,enumitem}
+\usepackage{bbm}
+\usepackage{tkz-euclide}
+\usepackage{physics}
+\usepackage{pgfplots}
+\usepackage{mathdots}
+\usepackage{mathrsfs}
+\usepackage{mwe}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
 %===============================================================
 % Data
 %===============================================================
@@ -85,17 +105,97 @@
   \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}}
 
 %===============================================================
-% Additional Notes, Applications, Main Walkthrough styling
+% Packages Used
 %===============================================================
+%%%%%% Copied from ee16.sty
+% \textheight=9in
+% \textwidth=6.5in
+% \addtolength{\voffset}{-1in}
+% \oddsidemargin=0in
+% \evensidemargin=-0.25in
+% \parindent=0pt
+% \parskip=5pt
+% \itemsep=-1pt
+% \floatsep 9pt plus 2pt minus 3pt
+% \intextsep 9pt plus 2pt minus 3pt
+% \textfloatsep=9pt plus 2pt minus 3pt
+% \renewcommand{\baselinestretch}{1.0}
+% \font\dunhd=cmdunh10 scaled \magstep5
+% \font\dunhc=cmdunh10 scaled \magstep4
+% \font\dunhbb=cmdunh10 scaled \magstep4
+% \font\dunhb=cmdunh10 scaled \magstep2
+% \font\dunha=cmdunh10 scaled \magstep2
+% \date{}
+% \AtBeginDocument{\RenewCommandCopy\qty\SI}
 
-%===============================================================
-% Notes with the appropriate numbering, like footnotes
-% 1. \usepackage can only be used in the document preamble while here I'm making my own package for my own use essentially?
-% 2. Follows the following structure of \newcommand{cmd}[args]{def} or \renewcommand{cmd}[args]{def}
-    % cmd 
-    %     A command name beginning with a \. For \newcommand it must not be already     defined and must not begin with \end; for \renewcommand it must already be defined.
-    % args
-    %     An integer from 1 to 9 denoting the number of arguments of the command being defined. The default is for the command to have no arguments.
-    % def 
-    %     The text to be substituted for every occurrence of cmd; a parameter of the form #n in cmd is replaced by the text of the nth argument when this substitution takes place.
-%===============================================================
+% Following environments are for emphasis within the document 
+\newenvironment{define}
+    {\begin{tcolorbox}[
+        title=Definition,
+        colback=pink!5!white,
+        colframe=pink!100!black
+        ]}
+    {\end{tcolorbox}}
+
+\newenvironment{concept}
+    {\begin{tcolorbox}[
+        title=Concept,
+        colback=blue!5!white,
+        colframe=blue!50!white
+        ]}
+    {\end{tcolorbox}}
+
+\newenvironment{sanity}
+    {\begin{tcolorbox}[
+        title=Sanity Check,
+        colback=red!5!white,
+        colframe=red!70!white
+        ]}
+    {\end{tcolorbox}}
+
+% adapted from https://tex.stackexchange.com/questions/296463/how-to-create-theorem-boxes
+\usepackage{amsmath}
+\usepackage{cleveref}
+\usepackage[most]{tcolorbox}
+
+\newtcbtheorem[no counter]{Analysis}{Analysis}{
+  enhanced,
+  sharp corners,
+  attach boxed title to top left={
+    yshifttext=-1mm
+  },
+  colback=white,
+  colframe=blue!25,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={
+    sharp corners,
+    size=small,
+    colback=blue!25,
+    colframe=blue!25,
+  } 
+}{prf}
+
+% copied from : https://tex.stackexchange.com/questions/481532star-wye-electrical-connection-math-symbol
+\newcommand\wye{\scalerel*{\stackengine{-1pt}{%
+  \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
+  \rotatebox[origin=c]{-30}{\rule{10pt}{1.3pt}}}{%
+  \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}}
+  
+% used for listing things
+\newenvironment{pline}{\begin{itemize}}{\end{itemize}}
+% used for equations
+\newenvironment{gline}{\begin{itemize}}{\end{itemize}}
+\newenvironment{todo}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{Ans}{\newline \color{blue}}{} 
+
+% FROM BRANDON: https://github.com/Bransthre/eecs127-notes/blob/main/ln.sty changed colors but i want to be able to 
+\tcolorboxenvironment{pline}
+  {blanker, before skip = 6pt, after skip = 6pt,
+    borderline west = {1mm}{0pt}{blue!45!black!15!red!45!}}
+\tcolorboxenvironment{gline}
+  {blanker, before skip = 6pt, after skip = 6pt,
+    borderline west = {1mm}{0pt}{green!65!black!45!}}
+\tcolorboxenvironment{todo}
+  {blanker, before skip = 6pt, after skip = 6pt,
+    borderline west = {1mm}{0pt}{red!100!}}
