@@ -108,50 +108,25 @@
 % Packages Used
 %===============================================================
 %%%%%% Copied from ee16.sty
-% \textheight=9in
-% \textwidth=6.5in
-% \addtolength{\voffset}{-1in}
-% \oddsidemargin=0in
-% \evensidemargin=-0.25in
-% \parindent=0pt
-% \parskip=5pt
-% \itemsep=-1pt
-% \floatsep 9pt plus 2pt minus 3pt
-% \intextsep 9pt plus 2pt minus 3pt
-% \textfloatsep=9pt plus 2pt minus 3pt
-% \renewcommand{\baselinestretch}{1.0}
-% \font\dunhd=cmdunh10 scaled \magstep5
-% \font\dunhc=cmdunh10 scaled \magstep4
-% \font\dunhbb=cmdunh10 scaled \magstep4
-% \font\dunhb=cmdunh10 scaled \magstep2
-% \font\dunha=cmdunh10 scaled \magstep2
-% \date{}
-% \AtBeginDocument{\RenewCommandCopy\qty\SI}
-
-% Following environments are for emphasis within the document 
-\newenvironment{define}
-    {\begin{tcolorbox}[
-        title=Definition,
-        colback=pink!5!white,
-        colframe=pink!100!black
-        ]}
-    {\end{tcolorbox}}
-
-\newenvironment{concept}
-    {\begin{tcolorbox}[
-        title=Concept,
-        colback=blue!5!white,
-        colframe=blue!50!white
-        ]}
-    {\end{tcolorbox}}
-
-\newenvironment{sanity}
-    {\begin{tcolorbox}[
-        title=Sanity Check,
-        colback=red!5!white,
-        colframe=red!70!white
-        ]}
-    {\end{tcolorbox}}
+\textheight=9in
+\textwidth=6.5in
+\addtolength{\voffset}{-1in}
+\oddsidemargin=0in
+\evensidemargin=-0.25in
+\parindent=0pt
+\parskip=5pt
+\itemsep=-1pt
+\floatsep 9pt plus 2pt minus 3pt
+\intextsep 9pt plus 2pt minus 3pt
+\textfloatsep=9pt plus 2pt minus 3pt
+\renewcommand{\baselinestretch}{1.0}
+\font\dunhd=cmdunh10 scaled \magstep5
+\font\dunhc=cmdunh10 scaled \magstep4
+\font\dunhbb=cmdunh10 scaled \magstep4
+\font\dunhb=cmdunh10 scaled \magstep2
+\font\dunha=cmdunh10 scaled \magstep2
+\date{}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
 
 % adapted from https://tex.stackexchange.com/questions/296463/how-to-create-theorem-boxes
 \usepackage{amsmath}
@@ -176,11 +151,6 @@
   } 
 }{prf}
 
-% copied from : https://tex.stackexchange.com/questions/481532star-wye-electrical-connection-math-symbol
-\newcommand\wye{\scalerel*{\stackengine{-1pt}{%
-  \rotatebox[origin=c]{30}{\rule{10pt}{.9pt}}\kern-1pt%
-  \rotatebox[origin=c]{-30}{\rule{10pt}{1.3pt}}}{%
-  \rule{.9pt}{10pt}}{O}{c}{F}{F}{S}}{\Delta}}
   
 % used for listing things
 \newenvironment{pline}{\begin{itemize}}{\end{itemize}}
