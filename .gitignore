@@ -6,5 +6,7 @@
 *.out
 *.synctex.gz
 *.toc
+*.pdf
 test_file.tex
 test_file.pdf
+.DS_Store

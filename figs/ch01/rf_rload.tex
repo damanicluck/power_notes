@@ -1,0 +1,10 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american]
+        \draw (0,0) to[sinusoidal voltage source, v=$V_{\text{s}}$] (0,-2);
+        \draw (0,0) to[R, l=$R_{f}$, v=$V_1$] (3,0);
+        \draw (3,0) to[R, l=$R_{load}$, v=$V_2$] (3,-2);
+        \draw (0,-2) -- (3,-2);
+        \draw (3,0) -- (4,0) node[right] {$V_{\text{out}}$};
+    \end{circuitikz}
+\end{figure}

@@ -1,0 +1,48 @@
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[c]{0.4\linewidth}
+        \centering
+        \begin{circuitikz}[american]
+            % \tikzset{R/.append style={color=red, /tikz/text=red}}
+            \ctikzset{bipoles/resistor/height=0.15}
+            \ctikzset{bipoles/resistor/width=0.4}
+            \coordinate (A) at (-1,1);
+            \coordinate (B) at (0,-1);
+            \coordinate (C) at (1,1);
+            \coordinate (Rab) at (-0.5,0);
+            \coordinate (Rbc) at (0.5,0);
+            \coordinate (Rac) at (0,1);
+            \draw 
+                (A) node[label={left:$A_D$}]{} [R] to  
+                (B) node[label={below:$B_D$}]{} [R] to 
+                (C) node[label={right:$C_D$}]{} [R] to 
+                (A)
+                (Rab) node[label={left:$R_{AB}$}]{}
+                (Rbc) node[label={right:$R_{BC}$}]{}
+                (Rac) node[label={above:$R_{AC}$}]{};
+        \end{circuitikz}
+        \caption{Delta ($\Delta$) Network}
+    \end{minipage}
+    \begin{minipage}[c]{0.3\linewidth}
+        \centering
+        \begin{circuitikz}
+        \ctikzset{bipoles/resistor/height=0.15}
+            \ctikzset{bipoles/resistor/width=0.4}
+            \coordinate (A1) at (-1,1);
+            \coordinate (B1) at (0,-1.4);
+            \coordinate (C1) at (1,1);
+            \coordinate (Ra) at (-0.5,0.5);
+            \coordinate (Rb) at (0,-0.5);
+            \coordinate (Rc) at (0.5,0.5);
+            \coordinate (center) at (0,0);
+            \draw
+                (A1) node[label={left:A1}]{} [R, *-] to (center)
+                (B1) node[label={below:B1}]{} [R, *-] to (center)
+                (C1) node[label={right:C1}]{} [R, *-] to (center)
+                (Ra) node[label={left:$R_{A}$}]{}
+                (Rb) node[label={right:$R_{B}$}]{}
+                (Rc) node[label={right:$R_{C}$}]{};
+        \end{circuitikz}
+        \caption{Wye (Y) Network}
+    \end{minipage}
+\end{figure}

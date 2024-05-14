@@ -1,0 +1,15 @@
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american]
+        \draw (0,0)
+        to[V, v=$V$, invert] (0,2)
+        to[R, l=$R_{in}$, i=$i_{load}$] (2,2)
+        to[R, l=$R_{load}$] (2,0)
+        -- (0,0);
+        \draw (2,2) -* (4,2) to[open, v=$V_{\text{out}}$] (4,0) -- (2,0);
+    \end{circuitikz}    
+\end{figure}
+\begin{align*}
+    P &= I_{load}^2 R_{load} = \frac{V^2 R_{load}}{(R_{in} + R_{load})^2} \\
+    \frac{dP}{dR_{load}} &= \frac{V^2(R_{in} + R_{load})^2 - 2R_{load}(R_{in} + R_{load})V^2}{(R_{in} + R_{load})^4} = 0 \Rightarrow R_{load} = R_{in}
+\end{align*}
