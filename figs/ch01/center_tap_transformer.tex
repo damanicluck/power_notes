@@ -2,19 +2,19 @@
     \centering
     \begin{circuitikz}[american]
         \draw (0,0) node [transformer core](T){}  % reminded by @PaulGessler, thanks.
-        (T.A1) node[above] {A1}
-        (T.A2) node[below] {A2}
-        (T.B1) node[above] {B1} 
-        (T.B2) node[below] {B2}
+        (T.A1) node[above] {$n_1$}
+        (T.B1) node[above] {$n_2$} 
         (T.base) node{K};
         \draw (T.A1) --++(-2,0);
         \draw (T.A2) --++(-2,0);
-        \draw (T.B1) --++(2,0) to[D, v=${V_\gamma=0.7}$, i>_=](5,0);        
-        \draw (T.B2) --++(2,0) to[D, v=${V_\gamma=0.7}$ ,i>_=](5,-2.1);
-        \draw(T.A1) to[open,v<={$240V_{rms}$}](T.A2);
-        \draw(T.B2) to[open,v>=$hi$](T.B1);
+        \draw (T.B1) --++(2,0);        
+        \draw (T.B2) --++(2,0);
+        \draw (T.A1) to[open](T.A2);
+        \draw (T.B2) --++(2,0) to[open, v<=$230~V_{RMS}$] ++(0,2);
         % 2 new lines for neutral line on the secondary side.
-        \draw[thick] ($(T.B1)!0.515!(T.B2)-(0.7,0)$)--node[pos=0.5,above,inner sep=0pt](n){$12V_{rms}$}++ (3,0);
-        \draw  (n) -- ++ (0,-0.3)node[ground]{};
+        \draw[thick] ($(T.B1)!0.5!(T.B2)-(0.7,0)$)--node[pos=0.5,above,inner sep=0pt](n){}++ (1,0);
+        \draw (T.B2) --++(0.5,0) 
+        to [open, v<=$115~V_{RMS}$] ++(0,1) 
+        to [open, v<=$115~V_{RMS}$] ++(0,1);
     \end{circuitikz}
 \end{figure}

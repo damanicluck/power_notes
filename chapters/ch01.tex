@@ -157,8 +157,27 @@ We can show this by taking the derivative of the power function. At maximum powe
 \section{Electrical Transformers}
 Definitions for this section:
 \begin{pline}
-    
+    \item \textbf{Transformer}: made up of two or more inductors, called windings and on schematics the vertical lines represent core material
+    \item \textbf{Primary winding}: input signal
+    \item \textbf{Secondary winding}: output signal
+    \item \textbf{Step-up transformer}: transformer that is designed to generate an output voltage that is higher than the input voltage
+    \item \textbf{Step-down transformer}: transformer that generates an output voltage that is lower than the input voltage
+    \item \textbf{Isolation transformer}: a transformer that has a turns ratio of 1
+    \item \textbf{Center-tapped transformer}: a terminal connected to the center of the secondary winding. This allows a single transformer to generate two output voltages that have half of the amplitude that appears across the entire secondary winding. 
 \end{pline}
+
+Voltage across the second winding will be some proportion of both windings turn ratios
+    \[N = \frac{n_2}{n_1} ~~~~~~ V_2 = NV_1 ~~~~~ I_2 = \frac{I_1}{N}\]
+\begin{gline}
+    \item $n_1$: number of primary turns
+    \item $n_2$: number of secondary turns
+    \item $N$: turn ratio
+\end{gline}
+
+\input{figs/ch01/transformer.tex}
+
+You can also tap into certain proportions of the coils to provide different voltages.
+\input{figs/ch01/center_tap_transformer.tex}
 
 \section{Sources}
 \begin{enumerate}
