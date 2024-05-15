@@ -9,4 +9,4 @@
 *.pdf
 test_file.tex
 test_file.pdf
-.DS_Store
+*.DS_Store
