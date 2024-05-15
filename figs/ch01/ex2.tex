@@ -8,3 +8,36 @@
         to (0,0);
     \end{circuitikz}
 \end{figure}
+
+The admittance of the circuit, $Y_{in}$ is the inverse of the impedance. Here are the general steps for finding some $R'$ and $R$ such that their impedances matched
+\begin{enumerate}
+    \item Calculate the impedance $Z$ of the circuit.
+        \begin{align*}
+            Z &= (R + j \omega L) / (\frac{1}{j \omega C}) \\
+            Z &= \frac{(R + j \omega L) \times \frac{1}{j\omega C}}{(R+ j \omega L)+ \frac{1}{j\omega C}} \\
+            Z &= \frac{R + j\omega L}{(R + j\omega L)(j \omega C) + 1} \\
+            Y_{in} = \frac{1}{Z} &= \frac{[(R+ j\omega L)(j\omega C)+1]}{(R+j\omega L)} \\
+            Y_{in} &= j\omega C + \frac{1}{(R+j\omega L)}
+        \end{align*}
+    
+    \item Set admittance $Y = \frac{1}{Z}$. Separate your admittance into its real and imaginary part to take the real part of $Y$. 
+    
+    Referring to the previous part: Use complex conjugates to separate the real and imaginary parts of the above equation.
+        \begin{align*}
+            Y_{in} &= j\omega L + \frac{1}{(R+j\omega L)} \times \frac{R-j\omega L}{R-j\omega L} \\
+            Y_{in} &= j\omega L + \frac{R}{(R^2+(\omega L)^2)} - \frac{j\omega L}{(R^2(\omega L)^2)} \\
+            Y_{in} &= \frac{R}{(R^2 + (\omega L)^2)} + j\left[\omega C - \frac{\omega L}{R^2 + (\omega L)^2}\right]
+        \end{align*}
+        We have that 
+            \[Y = \frac{R}{R^2 + (\omega L)^2} ~~~~~ \omega_0 = \sqrt{\frac{1}{LC}} - (\frac{R}{L})^2\]
+
+    \item $R' = \Re\{Y\}$, so that $R'$ here is a function of $R$.
+    
+    At the frequency of $\omega=0$, the resistance of $Y_{in}$ should be set to $R'$.
+        \begin{align*}
+            R' &= \frac{1}{Y} = \frac{R^2 + (\omega_0 L)^2}{R} \\
+            R' &= R + \frac{\omega_0^2 L^2}{R} \\
+            R' &= R[1+(\frac{\omega_0 L}{R})^2]
+        \end{align*}
+        Let $\frac{\omega_0 L}{R}$ be the Q-factor for the L and R networks, so now our equation is $R' = R[1+Q^2]$.
+\end{enumerate}

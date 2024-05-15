@@ -54,7 +54,7 @@ Line (2) comes from the trig idenity
     \[\sin^2{u} = \frac{1-\cos{(2u)}}{2}\]
 Line (3) comes from evaluating the integral. In line (4), we see that everything within the brackets evaluates to $T$ and that this results in $T$ cancelling out with the $T$ in the denominator, resulting in just a 2 in the denominator, which is later square rooted.
 
-\section{$X_{peak}$ and Oscilloscope Readings}
+\section{Oscilloscope Readings}
 We notice that $X_{peak}$ is described in its RMS value as the large value that we can get. The amplitude of this sine wave is 1, but if we were to output this sinusoid in High-Z mode on the function generator, we would have to set this to a 2 $V_{pp}$ (Volt peak to peak). Contrastingly, if we were in 50-Ohm mode, setting the function generator to 2 $V_{pp}$ would result in a sinusoid with an $X_{peak}$ of 4 $V$.
 
 Why is my function generator's output voltage wrong?
@@ -108,6 +108,7 @@ An increase in frequency decreases the window of errors. The electrical circuit 
 \end{pline}
 
 We can show this by taking the derivative of the power function. At maximum power transfer, this derivative is equal to zero
+
 \subsection{Examples}
 \begin{enumerate}
     \item Suppose that we have a system that is modeled by the circuit below
@@ -115,15 +116,6 @@ We can show this by taking the derivative of the power function. At maximum powe
 
     \item Suppose now you have the following circuit
         \input{figs/ch01/ex2.tex}
-        The admittance of the circuit, $Y_{in}$ is the inverse of the impedance. Here are the general steps for finding some $R'$ and $R$ such that their impedances matched
-        \begin{enumerate}
-            \item Calculate the impedance $Z$ of the circuit.
-            \item Set admittance $Y = \frac{1}{Z}$.
-            \item Separate your admittance into its real and imaginary part to take the real part of $Y$.
-            \item $R' = \Re\{Y\}$, so that $R'$ here is a function of $R$.
-        \end{enumerate}
-
-    \textcolor{red}{i dont feel like doing the calculations right now im too tired do later though : \href{https://eepower.com/technical-articles/understanding-impedance-matching}{link}}
 
     \item \textbf{Transformer impedance matching:} set the turn ratio accordingly. Low voltage $\rightarrow$ fewer turns. 
         \begin{define}
@@ -132,7 +124,10 @@ We can show this by taking the derivative of the power function. At maximum powe
     
     \item \textbf{Transmission line:} Transmission of electrical energy from the source to the load is done using a transmission line. While transferring this energy, it is important to zero or minimize energy losses that occur. For this to be possible, we should match the source and load impedances to the transmission line being used.
     
-    The characteristic impedance is defined as the voltage and current wave ratio at any given point along the transmission line. If the transmission line in discussion is long, then we expect to have a different characteristic impedance at different distances along this transmission line. If we fail to do the impedance matching, the signs reaching the load will be reflected in the source of the origin, giving rise to a standing wave. The amount of power reflected is measured using the coefficient of reflection, which is calculated using the equation below
+    The characteristic impedance is defined as the voltage and current wave ratio at any given point along the transmission line. 
+    If the transmission line in discussion is long, then we expect to have a different characteristic impedance at different distances along this transmission line. 
+    If we fail to do the impedance matching, the signs reaching the load will be reflected in the source of the origin, giving rise to a standing wave. 
+    The amount of power reflected is measured using the coefficient of reflection, which is calculated using the equation below
         \begin{define}
             \[\Gamma  = \frac{Z_L - Z_0}{Z_L + Z_0}\]
             $Z_L$: line impedance, $Z_0$: characteristic impedance
@@ -151,13 +146,19 @@ We can show this by taking the derivative of the power function. At maximum powe
         $R_A$ is the resistance of the antenna is 150$\Omega$ and its cable while the TV's resistance is 600$\Omega$. Use the turns ratio formula to find the number of turns. Then set a transformer in between like in the image below.
         \begin{figure}[H]
             \centering
-            \includegraphics[scale=0.8]{figs/z_match_ex5.png}
+            \includegraphics[scale=0.7]{figs/z_match_ex5.png}
         \end{figure}
 
     \item In the case of the headphone, the signal source is the device where the headphone is plugged. The headphone is the load. For the system to attain quality audio output, the source, and the load impedances must be matched. By matching the impedances, we make sure that there is maximum power transfer from the source of the audio to the headphone.
 
     When building portable devices, ensure that low-impedance headphones are built. This makes the system work well with proper sound quality.
 \end{enumerate}
+
+\section{Electrical Transformers}
+Definitions for this section:
+\begin{pline}
+    
+\end{pline}
 
 \section{Sources}
 \begin{enumerate}
@@ -166,4 +167,5 @@ We can show this by taking the derivative of the power function. At maximum powe
     \item \href{https://www.allaboutcircuits.com/textbook/alternating-current/chpt-11/true-reactive-and-apparent-power/}{True, Reactive, and Apparent Power}
     \item \href{https://www.analog.com/en/resources/glossary/impedance-matching.html}{impedance matching}
     \item \href{https://eepower.com/technical-articles/understanding-impedance-matching/#}{Understanding Impedance Matching}
+    \item \href{https://eepower.com/power-electronics-textbook/vol-i-electrical-power-systems-design/chapter-5-impedance-matching-and-power-transfer/understanding-electrical-transformers/#}{Understanding Electrical Transformers}
 \end{enumerate}
