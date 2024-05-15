@@ -1,0 +1,18 @@
+% https://tex.stackexchange.com/questions/207770/transformers-in-circuitikz
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american]
+        \draw (0,0) node [transformer](T){}
+        (T.A1) node[above] {$n_1$}
+        (T.B1) node[above] {$n_2$} 
+        (T.base) node{K};
+        \draw (T.A1) -- ++(-2,0);
+        \draw (T.A2) -- ++(-2,0);
+        \draw (T.B1) -- ++(2,0);        
+        \draw (T.B2) -- ++(2,0);
+        \draw(T.A1) to[open,v={$V_1$}](T.A2);
+        \draw(T.B2) to[open,v<=$V_2$](T.B1);
+        \draw ($(T.base)+(1mm,-2mm)$)  -- ++(0,-1.8);
+        \draw ($(T.base)+(-1mm,-2mm)$) -- ++(0,-1.8);
+    \end{circuitikz}
+\end{figure}
