@@ -2,23 +2,34 @@
 
 \section{How to read AC \& DC Schematics and Power System Relaying}
 \begin{concept}
-    At its core, schematics graphically arrange the components of a system to emphasize the functional arrangement as opposed to the physical arrangement. Emphasizing function facilitates an understanding of how the system is supposed to operate and makes functional testing of systems much easier because it highlights relationships between elements.
+    At its core, schematics graphically arrange the components of a system to emphasize the functional arrangement as opposed to the physical arrangement. 
+    Emphasizing function facilitates an understanding of how the system is supposed to operate and makes functional testing of systems much easier because it highlights relationships between elements.
 \end{concept}
 
-Other names for AC schematics include, AC Elementary Diagrams or Three Line Diagrams. DC Schematics are referred to as elementary wiring diagrams. The DC schematics depict the DC system and shows the protection and control functions of the equipment in the substation. Sometimes the control functions are supplied by AC and are included in the elementary diagram. Standards in the AC and DC schematic can differ slightly from utility to utility. Both of these schematics will include the rating for circuit elements like resistors, transformers etc.
+Other names for AC schematics include, AC Elementary Diagrams or Three Line Diagrams. 
+DC Schematics are referred to as elementary wiring diagrams. 
+The DC schematics depict the DC system and shows the protection and control functions of the equipment in the substation. 
+Sometimes the control functions are supplied by AC and are included in the elementary diagram. 
+Standards in the AC and DC schematic can differ slightly from utility to utility. 
+Both of these schematics will include the rating for circuit elements like resistors, transformers etc.
 
-Any depiction of reality by the single line diagram is on a large scale, it might show where major pieces of equipment are in relation to each other. On the other hand, though the AC and DC schematics still don’t show reality in every detail, they will contain information that will provide the link between the real depiction of the equipment seen in wiring diagrams and the almost purely functional depiction shown in the single line diagram.
+Any depiction of reality by the single line diagram is on a large scale, it might show where major pieces of equipment are in relation to each other. 
+On the other hand, though the AC and DC schematics still don’t show reality in every detail, they will contain information that will provide the link between the real depiction of the equipment seen in wiring diagrams and the almost purely functional depiction shown in the single line diagram.
 
-Another vital function of the AC schematic is to show how the AC current and voltage circuits can be isolated for testing. For example, microprocessor delays might contribute to how secondary input quantities are measured as well as the directional sensitivity of specific elements.
+Another vital function of the AC schematic is to show how the AC current and voltage circuits can be isolated for testing. 
+For example, microprocessor delays might contribute to how secondary input quantities are measured as well as the directional sensitivity of specific elements.
 
 \begin{concept}
-    \textbf{AC and DC schematics} allow users to quickly trace a signal through the circuit and understand the function without regard to the actual physical wiring locations. Detail will include specific terminal numbers of devices and test switches to which connections are made. 
+    \textbf{AC and DC schematics} allow users to quickly trace a signal through the circuit and understand the function without regard to the actual physical wiring locations. 
+    Detail will include specific terminal numbers of devices and test switches to which connections are made. 
 \end{concept}
 
 \subsection{Common Practices}
 \begin{enumerate}
     \item If complexity of the system requires it, the devices controlling the equipment.
-    \item The DC circuit is usually shown with the positive bus closer to the top of the page and the negative bus closer to the bottom. The general layout of these drawings is that the DC source is usually shown at the left end of the drawing and the initiating contacts are shown above the operating elements. Control flow is generally shown so that the diagram is read from upper left to lower right.
+    \item The DC circuit is usually shown with the positive bus closer to the top of the page and the negative bus closer to the bottom. 
+    The general layout of these drawings is that the DC source is usually shown at the left end of the drawing and the initiating contacts are shown above the operating elements. 
+    Control flow is generally shown so that the diagram is read from upper left to lower right.
 \end{enumerate}
 
 \subsection{DC Schematics and IEC 61850 Station Bus}
@@ -91,16 +102,25 @@ There are four different types of three-phase transformer winding connections fo
 \end{define}
 \textbf{More detailed explanation from Schematic Representation of Power System Relaying report:}
 
-Shows the overall scheme and connections and interactions between equipment and relay system components but in a simplified manner. For example, it uses a single line to represent three phases (hence the name “single line”). The information is shown schematically, but the high- voltage portion is usually shown in a pseudo-physical layout that matches or mimics the actual bus layout in the substation. All relays and other major components are assigned a unique identification. The identification is carried through the entire drawing set. There may be other drawings in the single line format. There may also be a one line diagram that emphasizes the power system equipment and does not detail the relay system components but only those elements connected directly at the primary voltage. This may be referred to as the “station”, “station one line”, or “power one line” diagram. There may also be a simplified one line diagram showing all the protection schemes and their intended zones of protection. This is referred to as the “protection zone” or “meter and relay single line” diagram.
+Shows the overall scheme and connections and interactions between equipment and relay system components but in a simplified manner. 
+For example, it uses a single line to represent three phases (hence the name “single line”). 
+The information is shown schematically, but the high- voltage portion is usually shown in a pseudo-physical layout that matches or mimics the actual bus layout in the substation. 
+All relays and other major components are assigned a unique identification. 
+The identification is carried through the entire drawing set. 
+There may be other drawings in the single line format. 
+There may also be a one line diagram that emphasizes the power system equipment and does not detail the relay system components but only those elements connected directly at the primary voltage. 
+This may be referred to as the “station”, “station one line”, or “power one line” diagram. 
+There may also be a simplified one line diagram showing all the protection schemes and their intended zones of protection. 
+This is referred to as the “protection zone” or “meter and relay single line” diagram.
 
 \textbf{Components on a single-line diagram}
-\begin{itemize}
+\begin{pline}
     \item Power sources - includes generators, utility supplies and indicates their voltage levels and connection points to the electrical system
     \item Electrical Equipment - includes transformers, circuit breakers, switches, motors, and loads
     \item Bus arrangement - includes bus bars for power distribution at different voltage levels and shows how power is routed from one location to another
     \item Protective devices - includes fuses, circuit breakers, and relays
     \item Metering/instrumentation - includes metering devices (ammeter, voltmeter etc) and measuring points for monitoring/control
-\end{itemize}
+\end{pline}
 
 Bus Arrangement and Voltage Levels
 \begin{define}
@@ -127,7 +147,12 @@ Single line diagrams are the most simplified schematic and least detailed since 
     \item AC/DC schematics
     \item Logic/wiring diagrams
 \end{enumerate}
-Each type of schematic has different meaning depending on the intended use. Day to day activities associated with power system work include planning, designing, managing, estimating, commissioning, testing, operating, maintaining, consulting, and providing legal records. The activities are performed by personnel from different organizational groups such as attorneys, project managers, electricians, relay technicians, design engineers, substation operators, system dispatchers, and system planners. How each function is situated within the organizational structure of a power system operator might impact how the different types of drawings are combined and used. Certain functions such as real time power system operation have very high priority when compared to activities such as accounting that can be done at any time after the fact. This is then reflected into the level of detail contained by each type of drawing depending upon its purposes and priorities.
+Each type of schematic has different meaning depending on the intended use. 
+Day to day activities associated with power system work include planning, designing, managing, estimating, commissioning, testing, operating, maintaining, consulting, and providing legal records. 
+The activities are performed by personnel from different organizational groups such as attorneys, project managers, electricians, relay technicians, design engineers, substation operators, system dispatchers, and system planners. 
+How each function is situated within the organizational structure of a power system operator might impact how the different types of drawings are combined and used. 
+Certain functions such as real time power system operation have very high priority when compared to activities such as accounting that can be done at any time after the fact. 
+This is then reflected into the level of detail contained by each type of drawing depending upon its purposes and priorities.
 
 \subsection{Symbols}
 It is difficult to keep a SLD easy to read while including all the necessary data. We want to communicate function using symbols
@@ -139,9 +164,49 @@ It is difficult to keep a SLD easy to read while including all the necessary dat
     \caption{Three phase connection in a SLD}
 \end{figure}
 
+Guidelines for creating SLDs
+\begin{pline}
+    \item \textbf{One-Line Representation}: Single-line diagrams use a single line to represent all the electrical components and connections. This helps in reducing complexity and providing a clear overview of the system.
+    \item \textbf{Unidirectional Flow}: Electrical power is typically shown to flow from the top of the diagram to the bottom, following a unidirectional flow from the source to the loads.
+    \item \textbf{Logical Arrangement}: Components are arranged logically, starting with the power source at the top and then proceeding to the loads at the bottom.
+    \item \textbf{Labels and Symbols}: Standardized symbols represent each component uniquely, and labels are used to identify the type and ratings of the equipment.
+    \item \textbf{Breakers and Disconnects}: Circuit breakers and disconnect switches are strategically placed to indicate their protective roles and isolation points within the system.
+\end{pline}
+
+Circuit Breakers and Protective Devices in Single-Line Diagrams
+\begin{itemize}
+    \item \textbf{Removeable or Drawout Circuit Breaker}: These circuit breakers can be withdrawn from their housing without disconnecting the electrical connections. 
+    They facilitate easy maintenance and replacement of faulty breakers. 
+    For instance, a draw-out circuit breaker might protect a critical process in an industrial plant. 
+    In case of a fault, the draw-out feature allows quick replacement, minimizing downtime.
+    \item \textbf{Non-Drawout Circuit Breaker}: Non-drawout circuit breakers are fixed in their housings and cannot be withdrawn. 
+    They are commonly used for less critical circuits or where regular maintenance is not required.
+    \item \textbf{Disconnect Switch}: Disconnect switches provide a visible means of isolation and are used to de-energize equipment for maintenance or emergencies. 
+    For instance, a disconnect switch might be placed ahead of a motor to isolate it from the power supply during maintenance or repair work.
+    \item \textbf{Protective Relays}: Protective relays are connected to current transformers and other sensors to detect abnormal conditions such as overcurrent, undercurrent, or faults. 
+    They trigger circuit breakers to open and protect equipment. 
+    For instance, a protective relay connected to a current transformer monitors the current flowing to a motor. 
+    The relay trips the associated circuit breaker to prevent motor damage if the current exceeds a preset threshold due to a fault.
+\end{itemize}
+
+Transformers 
+\begin{itemize}
+    \item \textbf{Transformer Winding Configurations}: Comes in different windings like $\wye-\wye$
+    \item \textbf{Transformer Ratings}: Transformers are rated in kilovolt-amperes (kVA) to indicate their power-carrying capacity. 
+    The rating is crucial for determining the transformer's capability and suitability for the application.
+    \item \textbf{Cooling Methods}: Transformers can be cooled using different techniques, including natural air convection (KNAN) and forced air cooling (KNAF). 
+    The cooling method affects the transformer's thermal performance and is essential for proper sizing and operation.
+    \item \textbf{Surge and Lightning Protection}: Surge arresters (metal oxide varistors) are often used to safeguard transformers from voltage surges and lightning strikes. 
+    These devices are represented on the SLD and connected to the transformer's incoming terminations.
+\end{itemize}
+
+\begin{todo}
+    \item resume here
+\end{todo}
+
 More symbols loaded below
 
-\includepdf[pages={5,6,7,8,9,10}]{daltco_wiring_guide}
+\includepdf[pages={5,6,7,8,9,10}]{figs/ch03/daltco_wiring_guide}
 
 \section{Sources}
 \begin{enumerate}
@@ -153,5 +218,6 @@ More symbols loaded below
         \item \href{https://electrical-engineering-portal.com/ac-dc-schematics-protection-control-relaying}{Protection \& Control Relaying Schematics}
         \item \href{https://www.pes-psrc.org/kb/report/047.pdf}{PSRC I5 Schematic Representation of Power System Relaying}
         \item \href{https://www.daltco.com/sites/daltco.com/files/resource/schneider-wiring-diagram-book.pdf}{Wiring diagram book}
+        \item \href{https://www.studyforfe.com/blog/fundamentals-of-single-line-diagrams/}{link}
     \end{enumerate}
 \end{enumerate}

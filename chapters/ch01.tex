@@ -31,12 +31,16 @@ The power is equal to the voltage waveform squared over the resistor. The triang
 Remember that 
 \[\langle v \rangle ^2 \neq v^2\]
 
-If we take a look at this sine wave and say that this represents current and connected this to a resistor, average power would not be 0 even though average current is 0. $I(t)$ here represents the instantaneous value. The resistor generates (consumes) power at both the negative and positive parts of this waveform.
+If we take a look at this sine wave and say that this represents current and connected this to a resistor, average power would not be 0 even though average current is 0. $I(t)$ here represents the instantaneous value. 
+The resistor generates (consumes) power at both the negative and positive parts of this waveform.
 
 \input{figs/ch01/sine.tex}
 
 \begin{sanity}
-    Is the RMS value always greater than or equal to the average value? Yes. Recall the definitions of average value and the RMS value above. My intuition behind this is that you're squaring a periodic function there will be no negative values.
+    Is the RMS value always greater than or equal to the average value? 
+    Yes. 
+    Recall the definitions of average value and the RMS value above. 
+    My intuition behind this is that you're squaring a periodic function there will be no negative values.
 \end{sanity}
 
 Sine wave RMS value calculations:
@@ -52,15 +56,20 @@ Define $x(t) = X_{peak} \sin{(t \times \frac{2\pi}{T})}$. We multiply $t$ by a f
 
 Line (2) comes from the trig idenity 
     \[\sin^2{u} = \frac{1-\cos{(2u)}}{2}\]
-Line (3) comes from evaluating the integral. In line (4), we see that everything within the brackets evaluates to $T$ and that this results in $T$ cancelling out with the $T$ in the denominator, resulting in just a 2 in the denominator, which is later square rooted.
+Line (3) comes from evaluating the integral. 
+In line (4), we see that everything within the brackets evaluates to $T$ and that this results in $T$ cancelling out with the $T$ in the denominator, resulting in just a 2 in the denominator, which is later square rooted.
 
 \section{Oscilloscope Readings}
-We notice that $X_{peak}$ is described in its RMS value as the large value that we can get. The amplitude of this sine wave is 1, but if we were to output this sinusoid in High-Z mode on the function generator, we would have to set this to a 2 $V_{pp}$ (Volt peak to peak). Contrastingly, if we were in 50-Ohm mode, setting the function generator to 2 $V_{pp}$ would result in a sinusoid with an $X_{peak}$ of 4 $V$.
+We notice that $X_{peak}$ is described in its RMS value as the large value that we can get. 
+The amplitude of this sine wave is 1, but if we were to output this sinusoid in High-Z mode on the function generator, we would have to set this to a 2 $V_{pp}$ (Volt peak to peak). 
+Contrastingly, if we were in 50-Ohm mode, setting the function generator to 2 $V_{pp}$ would result in a sinusoid with an $X_{peak}$ of 4 $V$.
 
 Why is my function generator's output voltage wrong?
 \begin{enumerate}
     \item \textbf{Scope vertical scale is using wrong probe attenuation.} A lot of scopes set this vertical scale automatically for you, so you may have to set this scale to be larger or smaller depending on how large your voltage is.
-    \item \textbf{Load impedance is different from what the generator expects.} Image a voltage divider below. If our function generator wants to output 1 $V_{pp}$ at $R_{load}$ then, if $R_f = 50 \Omega$ and it assumes the $R_{load}$ is also $50 \Omega$ then that means thats the function generation will set $V_s$ as $2 V_{pp}$. However, sometimes it is the case that if $R_{load}$ is too high (such as in the case of the oscilloscope itself) then that means that voltage drop across $R_f$ is not that big and most of the voltage drop occurs across $R_f$. This results in us reading 2 $V_{pp}$ when we meant to output 1 $V_{pp}$. To correct this, correct the load impedance on the function generator settings if you have the setting for it to High-Z or what your load impedance on whatever you're connecting to is or connect a 50 $\Omega$ through terminator to your coax on your lead.
+    \item \textbf{Load impedance is different from what the generator expects.} Image a voltage divider below. If our function generator wants to output 1 $V_{pp}$ at $R_{load}$ then, if $R_f = 50 \Omega$ and it assumes the $R_{load}$ is also $50 \Omega$ then that means thats the function generation will set $V_s$ as $2 V_{pp}$. 
+    However, sometimes it is the case that if $R_{load}$ is too high (such as in the case of the oscilloscope itself) then that means that voltage drop across $R_f$ is not that big and most of the voltage drop occurs across $R_f$. 
+    This results in us reading 2 $V_{pp}$ when we meant to output 1 $V_{pp}$. To correct this, correct the load impedance on the function generator settings if you have the setting for it to High-Z or what your load impedance on whatever you're connecting to is or connect a 50 $\Omega$ through terminator to your coax on your lead.
     
     \input{figs/ch01/rf_rload.tex}
 \end{enumerate}
@@ -82,6 +91,76 @@ We can describe the differences between apparent, reactive, and real power with 
     \item Reactive - packaging. The actual amount of power being used or dissipated
     \item Apparent - box. This is thescombination of reactive and real power and is without reference to phase angle.
 \end{pline}
+Summarized here in a table.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ |p{4cm}|p{5.5cm}|p{5.5cm}|}
+        \hline
+        Parameter 
+            & Active Power 
+            & Apparent Power \\ \hline
+        Symbol 
+            & Real power consumed by a circuit, converted into useful work. 
+            & Total power in an AC circuit, including both active and reactive power. \\ \hline
+        Measurement
+            & Watts (\unit{\watt}) 
+            & Volt-amperes (\unit{\volt\ampere}) \\ \hline
+        Represents 
+            & Actual energy utilized in the system. 
+            & Total power flowing through the circuit, including energy storage and release due to inductive and capacitive components \\ \hline
+        Role 
+            & Directly contributes to performing tasks (e.g. generating heat, light)
+            & Reflects the total power capacity needed in the electrical sytsem \\ \hline
+        Calculation 
+            & $P = VI \cos{\theta}$
+            & $S = VI$ \\ \hline
+        Relationship
+            & $P < S$
+            & $P \leq S$ \\ \hline
+    \end{tabular}
+\end{table}
+
+Active vs Reactive Power
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ |p{0.4\textwidth}|p{0.4\textwidth}|}
+        \hline
+        Active Power & Reactive Power \\ \hline
+        % 1 
+            The power supply which is actually Consumed in an AC Circuit is called Active Power 
+            & The power supply is an AC circuit that flows back and forth which means it moves in both directions (from source to load) in the circuit and reacts upon itself is called reactive power. \\ \hline
+        % 2 
+            Actual Power is denoted by “P” 
+            & Reactive Power is denoted by “Q” \\ \hline
+        % 3
+            It is measured in units of watts
+            & It is measured in units of Volt-Amps-Reactive (VAR) \\\hline
+        % 4
+            It works in AC and DC circuit
+            & It works in AC circuit \\ \hline
+        % 5
+            Active power is a real power    
+            & A power that is not effectively converted into heat, movement or light. \\ \hline
+        % 6 
+            Formulas:  $P=I^2 R$, $P= E^2/R$, $P=VI \cos{\theta}$. $E$=Voltage $I$=Current $R$=Resistance For Single Phase (Power Supply) directly apply this formula, For Three Phase we need to factor by $\sqrt{3}$ (1.732)
+            & Formulas:  $Q=I^2 X$, $P= E^2/X$, $Q=VI \sin{\theta}$. $E$=Voltage $I$=current $X$=reactance. For Single Phase (Power Supply) directly apply this formula, For Thr ee Phase we need to factor by $\sqrt{3}$ (1.732)\\ \hline
+        % 7 
+            It is measured by a wattmeter
+            & It is measured by a VAR meter \\ \hline
+        % 8 
+            In motor: Power used to cause rotation
+            & In motor: Power used to create a magnetic field in the air gap between stator and rotor. \\ \hline
+        % 9
+            Active power travels very far 
+            & Limitation: reactive power doesn't travel very far \\ \hline
+    \end{tabular}
+\end{table}
+
+In an AC circuit, there are different kinds of power--active, reactive, and apparent powers. 
+There is some overlap between them in meaning but each has its special implication. The power that works, active power is actually consumed or used in a circuit and really does useful work. 
+Reactive power is the power that flows forward and then backwards in an AC circuit. 
+The reactive components store it up when energy flows to them, releasing it back later as soon as energy demand starts running backwards through the same spot again because of their combination with resonance frequency circuits. 
+The apparent power is passing from the source to the circuit, and this effectively represents what amount of total demand there.
 
 \subsection{Pure Load Examples}
 
@@ -99,15 +178,19 @@ We can describe the differences between apparent, reactive, and real power with 
 \subsection{Motivation}
 Impedance matching has great use in high-frequency and high-speed devices. 
 
-When designing applications of ultra-high frequencies, impedance matching becomes a difficult operation for designers. The challenge is also reflected while designing microwaves and radio frequency circuits. When you get a wrong impedance matching, expect distorted pulses and high signal reflections.
+When designing applications of ultra-high frequencies, impedance matching becomes a difficult operation for designers. 
+The challenge is also reflected while designing microwaves and radio frequency circuits. When you get a wrong impedance matching, expect distorted pulses and high signal reflections.
 
-An increase in frequency decreases the window of errors. The electrical circuit works the best when we have a perfectly matched impedance. If the impedance matching is not done, expect the system to work abnormally because of the effects such as the signal reflections. The reflected waves cause data delays and distortion of the phase and minimize the ratio of signal to noise.
+An increase in frequency decreases the window of errors. 
+The electrical circuit works the best when we have a perfectly matched impedance. 
+If the impedance matching is not done, expect the system to work abnormally because of the effects such as the signal reflections. 
+The reflected waves cause data delays and distortion of the phase and minimize the ratio of signal to noise.
 
-\begin{pline}
-    \item Maximum power transfer occurs when the resistance of the voltage source is equal to the resistance of the load.
-\end{pline}
 
-We can show this by taking the derivative of the power function. At maximum power transfer, this derivative is equal to zero
+\textbf{Maximum power transfer occurs when the resistance of the voltage source is equal to the resistance of the load.}
+
+We can show this by taking the derivative of the power function. 
+At maximum power transfer, this derivative is equal to zero
 
 \subsection{Examples}
 \begin{enumerate}
@@ -149,7 +232,9 @@ We can show this by taking the derivative of the power function. At maximum powe
             \includegraphics[scale=0.7]{figs/z_match_ex5.png}
         \end{figure}
 
-    \item In the case of the headphone, the signal source is the device where the headphone is plugged. The headphone is the load. For the system to attain quality audio output, the source, and the load impedances must be matched. By matching the impedances, we make sure that there is maximum power transfer from the source of the audio to the headphone.
+    \item In the case of the headphone, the signal source is the device where the headphone is plugged. The headphone is the load. 
+    For the system to attain quality audio output, the source, and the load impedances must be matched. 
+    By matching the impedances, we make sure that there is maximum power transfer from the source of the audio to the headphone.
 
     When building portable devices, ensure that low-impedance headphones are built. This makes the system work well with proper sound quality.
 \end{enumerate}
@@ -187,4 +272,5 @@ You can also tap into certain proportions of the coils to provide different volt
     \item \href{https://www.analog.com/en/resources/glossary/impedance-matching.html}{impedance matching}
     \item \href{https://eepower.com/technical-articles/understanding-impedance-matching/#}{Understanding Impedance Matching}
     \item \href{https://eepower.com/power-electronics-textbook/vol-i-electrical-power-systems-design/chapter-5-impedance-matching-and-power-transfer/understanding-electrical-transformers/#}{Understanding Electrical Transformers}
+    \item \href{https://eshop.se.com/in/blog/post/difference-between-active-power-reactive-power-and-apparent-power.html#}{DIFFERENCE BETWEEN ACTIVE POWER, REACTIVE POWER AND APPARENT POWER}
 \end{enumerate}
